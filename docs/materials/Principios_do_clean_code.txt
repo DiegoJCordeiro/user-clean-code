@@ -1,0 +1,32 @@
+- Linguagem Obiqua
+	- Traduzir a fala de Negócios para o Código.
+- SRP (Single Responsibility Principle)
+	- Principio da Responsabilidade Única.
+	- A classe nunca pode ter mais de uma responsabilidade.
+		- Por exemplo, a classe Login não pode fazer cadastro de endereço.
+- DRY (Não se Repita)
+	- Principio da não repetição de código.
+	- As classes tem que partir do principio de reutilização e, não repetição.
+		- Por exemplo, a classe UsuarioService deve conter a responsabilidade de atuar com o Dominio de usuário.
+		  E teoricamente, toda classe que necessita manipular usuario, deve se comunicar com a instancia de UsuarioService.
+- Indireção ou Delegação
+	- Delegar ou Indirecionar a Regra para a classe especializada em manipulação de determinado dominio.
+- Principio do menor conhecimento ( Lei de Demeter )
+	- Minimizar o conhecimento das classes sobre dominios que não são de sua especialidade.
+- Alta Coesão e baixo acoplamento
+	- A alta coesão auxilia no contexto de organização do código. A mesma teria uma forte ligação com SRP.
+		- Por exemplo, uma classe de UsuarioService, deve somente manipular repositórios referente ao dominio de usuario.
+		- Jamais atuar em mais de um dominio.
+	- O baixo acoplamento serve como estrutura para evitar grandes amarrações no código e perda de coesão.
+		- Por exemplo, atuar com mais composição e menos herança.
+		- Uma classe deve ter poucas váriaveis de instancia, menos heranças e afins.
+- Imutabilidade
+	- Este conceito previne alteração de valores adiversos.
+	- Ou seja, muito aconselhável quando desejamos atuar com DTO.
+- Função Pura
+	- Este conceito atua sobre o principio de que para um mesmo input deve ser retornado um mesmo output.
+	- Não utiliza recursos externos como: Conexão com DB, requisições REST e afins.
+- Refatoração Tempestiva
+	- A arte de alterar um código internamente, sem mudar o resultado externo.
+	- Pode ser feita em pequenas sprints, com a seguinte sequência: Refinar, Refatorar e Validar.
+- 

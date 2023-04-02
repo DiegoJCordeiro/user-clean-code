@@ -1,0 +1,49 @@
+- Arquitetura Hexagonal
+	- É um padrão de projeto. Porém, com um viés de hierarquia arquitetural. Sendo assim, pode ser considerado um padrão arquitetural.
+	- Foi idealizado por um dos criadores do manifesto agil, conhecido como Alistair Cockburn.
+	- Serve como um Guideline para estruturar seu projeto.	
+	- Utilizado como uma forma de desenvolvimento ágil que previne o desenvolvedor de focar somente na parte técnica. Portanto, o mesmo acaba voltando seu viés para o business da entrega.
+	- Muito conhecido como "Ports and Adapters".
+
+	- Principios e Metaforas
+		- Isolamento
+			- Aplica o conceito de engenharia de software conhecido como: SoC (Separation of Concern) - https://en.wikipedia.org/wiki/Separation_of_concerns
+			- Estabelece o principio de modularização do software.
+			- A ideia é separar a aplicação em 3 partes
+				- Superior esquerdo.
+					- Entrada da sua aplicação. 
+					- Neste módulo encontra-se a configuração de GUI, Endpoints de seus Webservices e afins.
+				- Meio (Retangulo).
+					- Ponto focal da aplicação.
+					- Neste módulo encontra-se as regras de negócio e seus dominios.
+				- Inferior Direito.
+					- Comunicação da aplicação com serviços externos.
+					- Neste módulo encontra-se a integrações com base de dados, outros webservices e etc.
+		- Atores
+			- Ator primário (Driver/Condutor)
+				- Conduz a chamada a aplicação.
+				- Como, por exemplo: casos de testes, usuarios, front-ends e afins.
+				- Se localiza no lado superior esquerdo.
+			- Ator secundário (Driven/Conduzido)
+				- É conduzido ou chamado pelo core business.
+				- Como, por exemplo: bancos de dados, chamadas externas para webservices e afins.
+				- Se localiza no lado inferior direito.
+				- Possui 2 tipos
+					- Repository
+						- É bi-direcional.
+						- Recebe uma requisição e devolve algum tipo de retorno.
+						- Por exemplo: Banco de Dados, Webservices e etc.
+					- Recipient
+						- É uni-direcional.
+						- Recebe uma requisição, porém não devolve qualquer retorno.
+						- Por exemplo: envio de e-mail, requisições Post Http, Filas e etc.
+		- Dependências
+			- A dependencia deve ser de fora para dentro.
+			- Ambos os atores devem depender única e exclusivamente do retângulo.
+			- O retângulo não deve depender de ninguém.
+			- Com isso, se for necessário, por exemplo, trocar qualquer vendor de base de dados (Ator Conduzido) não haverá problema.
+			- E, se for necessário, alterar o ator condutor para qualquer outro tipo, também não haverá problema.
+		- Portas
+			- Portas são as entradas dos condutores e conduzidos ao seu retângulo.
+			- Porta Primária (Condutora)
+			- Porta Secundária (Conduzida)

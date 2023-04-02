@@ -1,0 +1,14 @@
+br\com\diegocordeiro\dao\impl\AddressDAOImpl.class
+br\com\diegocordeiro\dao\impl\UserDAOImpl.class
+br\com\diegocordeiro\models\Address.class
+br\com\diegocordeiro\ui\LoginUI.class
+br\com\diegocordeiro\dao\DAO.class
+br\com\diegocordeiro\models\User.class
+br\com\diegocordeiro\ui\ControlPanelUI$1.class
+br\com\diegocordeiro\ui\ControlPanelUI.class
+br\com\diegocordeiro\enums\TITLE_UI.class
+br\com\diegocordeiro\ui\SignupUI.class
+br\com\diegocordeiro\UserApplication.class
+br\com\diegocordeiro\services\UserService.class
+br\com\diegocordeiro\dto\UserDTO.class
+br\com\diegocordeiro\ui\TemplateUI.class
